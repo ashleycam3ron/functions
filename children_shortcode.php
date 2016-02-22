@@ -40,7 +40,10 @@ function sc_show_children_content($atts, $content = null){
 				<div class="col-xs-12">
 					<a href="<?php the_permalink($child->ID); ?>">
 					  <h1><?php echo $child->post_title;?></h1>
-					  <?php the_excerpt(); ?>
+					  <?php setup_postdata( $child );
+						  $excerpt = get_the_excerpt();  ?>
+						  <p><?php echo $excerpt; ?></p>
+						  <p><a class="more" href="<?php echo get_permalink($child->ID); ?>">Continue Reading →</a></p>
 					</a>
 				</div>
 			</article>
