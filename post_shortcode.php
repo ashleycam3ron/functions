@@ -1,5 +1,6 @@
 <?php
 // Add Shortcode
+//example usage  echo do_shortcode('[team category="Leadership Team"]');
 add_shortcode( 'team', 'team_shortcode' );
 function team_shortcode( $atts ) {
 	ob_start();
